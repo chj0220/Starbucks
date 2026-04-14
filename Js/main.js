@@ -7,7 +7,7 @@ searchEl.addEventListener('click', function(){
 
 searchInputEl.addEventListener('focus', function(){
     searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder','ÅëÇÕ°Ë»ö');
+    searchInputEl.setAttribute('placeholder','í†µí•©ê²€ìƒ‰');
 });
 
 searchInputEl.addEventListener('blur', function(){

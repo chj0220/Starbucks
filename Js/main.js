@@ -1,5 +1,5 @@
-const searchEl = document.querySelector('search');
-const searchInputEl = searchEl.querySelecto('input');
+const searchEl = document.querySelector('.search');
+const searchInputEl = searchEl.querySelector('input');
 
 searchEl.addEventListener('click', function(){
     searchInputEl.focus();
@@ -14,3 +14,31 @@ searchInputEl.addEventListener('blur', function(){
     searchEl.classList.remove('focused');
     searchInputEl.setAttribute('placeholer',' ');
 })
+
+const badgeEl = document.querySelector('header .badges');
+
+window.addEventListener('scroll', _.throttle(
+    function(){
+    /*console.log('scroll!!');*/
+    if(window.scrollY > 500){
+
+        gsap.to(badgeEl, 0.6, {
+            opacity: 0,
+            display: 'none'
+        });
+    }
+    else{
+        gsap.to(badgeEl, 0.6, {
+            opacity: 1,
+            display: 'block'
+        });
+    }
+}, 300));
+
+const fadeEls=document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function(fadeEl, index){
+    gsap.to(fadeEl, 1,{
+        delay: (index+1)*0.7, // 0.7 1.4 2.1 2.7 sec
+        opacity:1
+    });
+});
